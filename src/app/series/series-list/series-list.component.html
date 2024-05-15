@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">capital</th>
+        <th scope="col">conformation year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of series" (click)="onSelected(s)">
+        <th scope="row">{{s.id}}</th>
+        <td >{{s.name}}</td>
+        <td>{{s.capital}}</td>
+        <td>{{s.formation_year}}</td>
+      </tr>
+      <tr>
+        Average Seasons: {{averageSeasons}}
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="selected">
+    <app-series-detail [serie]="selectedSerie"></app-series-detail>
+</div>
+ 
